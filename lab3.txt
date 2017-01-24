@@ -1,0 +1,20 @@
+1. By doing an import os in python in the hello.py file, then pprint(dict(os.environ)).
+The pprint is not necessary but it makes it more readable.
+This is viewable by just going to:
+localhost:8000/hello.py
+
+2. The variable 'QUERY_STRING', you can get the parameters using the following call:\
+params = urlparse.parse_qs(os.environ['QUERY_STRING'])
+
+3. The 'HTTP_USER_AGENT' variable, and you can access the info contained within using the following call:
+user_agent = os.environ['HTTP_USER_AGENT']
+
+4. It comes via stdin and is accessible by declaring how bytes there are to read, and then grabbing them from stdin:
+content_length = os.environ['CONTENT_LENGTH']
+bytes_to_read = int(content_length)
+content = sys.stdin.read(bytes_to_read)
+
+5. Setting a cookie is as easy as:
+print "Set-Cookie: logged-in=True"
+
+6. It's syntax is 'HTTP_COOKIE'
